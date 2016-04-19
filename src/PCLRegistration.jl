@@ -58,7 +58,9 @@ hasConverged(r::AbstractRegistration) = icxx"$(r.handle)->hasConverged();"
 align(r::AbstractRegistration, cloud::PointCloud) =
     icxx"$(r.handle)->align(*$(cloud.handle));"
 
-@defpcltype IterativeClosestPoint{T1,T2} "pcl::IterativeClosestPoint"
+
+@defpcltype(IterativeClosestPoint{T1,T2} <: AbstractRegistration,
+    "pcl::IterativeClosestPoint")
 @defptrconstructor IterativeClosestPoint{T1,T2}() "pcl::IterativeClosestPoint"
 @defconstructor IterativeClosestPointVal{T1,T2}() "pcl::IterativeClosestPoint"
 
