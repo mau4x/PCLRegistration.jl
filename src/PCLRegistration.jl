@@ -65,7 +65,7 @@ align(r::AbstractRegistration, cloud::PointCloud) =
 @defconstructor IterativeClosestPointVal{T1,T2}() "pcl::IterativeClosestPoint"
 
 for f in [:setMaximumIterations, :setMaxCorrespondenceDistance]
-    body = Expr(:macrocall, symbol("@icxx_str"), "\$(icp.handle)->$f(\$s);")
+    body = Expr(:macrocall, Symbol("@icxx_str"), "\$(icp.handle)->$f(\$s);")
     @eval $f(icp::IterativeClosestPoint, s) = $body
 end
 
