@@ -1,3 +1,14 @@
+"""
+The **pcl_registration** library implements a plethora of point cloud
+registration algorithms for both organized an unorganized (general purpose)
+datasets.
+
+http://docs.pointclouds.org/trunk/group__registration.html
+
+## Exports
+
+$(EXPORTS)
+"""
 module PCLRegistration
 
 export AbstractRegistration, setTransformationEstimation,
@@ -6,6 +17,7 @@ export AbstractRegistration, setTransformationEstimation,
     hasConverged, align,
     IterativeClosestPoint, setMaximumIterations, setMaxCorrespondenceDistance
 
+using DocStringExtensions
 using LibPCL
 using PCLCommon
 using PCLKDTree
