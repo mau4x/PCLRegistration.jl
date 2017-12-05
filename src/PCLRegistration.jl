@@ -40,7 +40,7 @@ cxx"""
 
 import PCLCommon: setInputCloud, getInputCloud
 
-abstract AbstractRegistration
+abstract type AbstractRegistration end
 
 setTransformationEstimation(r::AbstractRegistration, te) =
     icxx"$(r.handle)->setTransformationEstimation($te);"
